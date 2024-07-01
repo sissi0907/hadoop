@@ -13,6 +13,8 @@ jobs:
         with:
           distribution: 'adopt'
           java-version: '11'
+      - name: Checkout version
+        run: git checkout cc2babc1f75c93bf89a8f10da525f944c15d02ea
 
       - name: Compile the project
         run: mvn test-compile -pl hadoop-tools/hadoop-distcp -am -Drat.skip
