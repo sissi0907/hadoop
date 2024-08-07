@@ -23,6 +23,10 @@ jobs:
         uses: actions/checkout@v3
         with:
           ref: 0af4011580878566213016af0c32633eabd15100
+
+      - name: Replace Snapshot
+        run: |
+              find .-type f -exec sed -i 's/3.3.0-SNAPSHOT/3.0.0/g'{}+
   
       - name: Test with Maven 
         run: | 
