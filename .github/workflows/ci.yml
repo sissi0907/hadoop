@@ -22,11 +22,11 @@ jobs:
       - name: Check
         uses: actions/checkout@v3
         with:
-          ref: 0af4011580878566213016af0c32633eabd15100
+          ref: 79f6118dccf809aed74dd54f46f5d77416e14aa1
   
       - name: Test with Maven 
         run: | 
-              for i in {1..5}; do mvn test -pl hadoop-ozone -am -Dtest=org.apache.hadoop.ozone.client.rpc.TestBlockOutputStreamWithFailures -DfailIfNoTests=false -Drat.skip -fae; done#>>test_log_DOXIATOOLS-64.txt || echo "Test iteration $i failed">>test_log_DOXIATOOLS-64.txt; done
+              for i in {1..5}; do mvn test -pl hadoop-ozone -am -Dtest=org.apache.hadoop.ozone.client.rpc.TestWatchForCommit -DfailIfNoTests=false -Drat.skip -fae; done#>>test_log_DOXIATOOLS-64.txt || echo "Test iteration $i failed">>test_log_DOXIATOOLS-64.txt; done
               
       # - name: Upload Test Log 
       #   if: always() 
